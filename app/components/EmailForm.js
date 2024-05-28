@@ -7,13 +7,9 @@ import Alert from "react-bootstrap/Alert";
 import { fetchData } from "../assets/petitions/fetchData";
 import { fetchLeads } from "../assets/petitions/fetchLeads";
 const EmailForm = ({
-  leads,
-  setLeads,
   setShowThankYou,
-  setShowFindForm,
   dataUser,
   setDataUser,
-  setHideIAPrompt,
   emailData,
   clientId,
   backendURLBase,
@@ -24,7 +20,6 @@ const EmailForm = ({
   setHideEmailForm,
   hideEmailForm
 }) => {
-
   const [validated, setValidated] = useState(false);
   const [error, setError] = useState(false);
   const [ableGenIA, setAbleGenIA] = useState(true);

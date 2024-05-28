@@ -3,7 +3,6 @@ import Button from "react-bootstrap/cjs/Button";
 
 const ListSelect = ({
   emails,
-  setShowFindForm,
   setHideIAPrompt,
   setShowMainContainer,
   hideList,

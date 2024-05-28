@@ -10,7 +10,6 @@ import LoadingMainForm from "./LoadingMainForm";
 
 const AIPrompt = ({
   tac,
-  setShowFindForm,
   dataUser,
   setDataUser,
   hideIAPrompt,
@@ -28,13 +27,8 @@ const AIPrompt = ({
   const [iaPrompt, setIaPrompt] = useState("");
   const {
     complete,
-    completion,
-    input,
-    stop,
     isLoading,
-    handleInputChange,
     handleSubmit,
-    setCompletion,
   } = useCompletion({
     api: "/api/completion"
   });
@@ -43,12 +37,6 @@ const AIPrompt = ({
     if (!iaPrompt || iaPrompt === "") {
       setAbleGenIA(false);
     }
-  };
-  const back = (e) => {
-    e.preventDefault();
-    setHideIAPrompt(true);
-    setShowFindForm(false);
-    setShowMainContainer(false);
   };
   const loading = (cl) => {
     scroll.scrollTo(1000);
