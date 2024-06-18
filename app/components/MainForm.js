@@ -194,6 +194,7 @@ const MainForm = ({
         setHideList={setHideList}
         setDataUser={setDataUser}
         dataUser={dataUser}
+        error={error}
       />
       <EmailForm
         allDataIn={allDataIn}

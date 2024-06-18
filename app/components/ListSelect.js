@@ -1,56 +1,83 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/cjs/Button";
-
+import Alert from "react-bootstrap/Alert";
 const ListSelect = ({
-  emails,
-  setHideIAPrompt,
+  setError,
+  error,
   setShowMainContainer,
   hideList,
-  setHideEmailForm,
   setHideList,
   setDataUser,
-  dataUser
+  dataUser,
+  setHideEmailForm
 }) => {
+  const privacy = [
+    {
+      Public: "The material will be published online with your name",
+    },
+    {
+      Confidential:
+        "The material isn’t published online and will be kept confidential by the committee",
+    },
+    {
+      NameWithHeld: "The material will be published online without your name",
+    },
+  ];
   const handleChange = (e) => {
     e.preventDefault();
     setDataUser({
       ...dataUser,
       [e.target.name]: e.target.value,
     });
-  }
+  };
   const click = async () => {
+    if (!dataUser.type) return setError(true);
     setHideEmailForm(false);
-    setHideList(true)
+    setHideList(true);
     setShowMainContainer(true);
+    setError(false);
   };
   const back = () => {
-    setHideList(true)
-    setShowMainContainer(false)
-    setHideIAPrompt(false)
-  }
+    setHideEmailForm(true);
+    setHideList(true);
+    setShowMainContainer(false);
+    setError(false);
+  };
   return (
-    <>
-      <div
-        hidden={hideList}
-        className={"buttons-list-container list-container"}
-      >
-        {emails?.map((email, index) => (
-          <label key={index} className="list-mp-row">
-            <input
-              id="representativeList-checkbox"
-              type="checkbox"
-              onChange={handleChange}
-              className="form-check-input"
-              value={email.name}
-              name="privacyType"
-            />
-            <h5 className="list-mp-row-info">{email.name}</h5>
-          </label>
+    <div
+      hidden={hideList}
+      className={"container container-content form-container"}
+    >
+      <div className={"buttons-list-container list-container"}>
+        {error ? (
+          <Alert variant={"danger"}>Please Select One Option</Alert>
+        ) : null}
+        {privacy?.map((option, index) => (
+          <>
+            {Object.keys(option).map((key) => (
+              <>
+                <label className="select-label main-texts-color labels-text-format form-label">
+                  {key}
+                </label>
+                <label key={index} className="list-mp-row">
+                  <input
+                    id="representativeList-checkbox"
+                    type="checkbox"
+                    onChange={handleChange}
+                    className="form-check-input"
+                    value={key}
+                    name="type"
+                  />
+                  <h5 className="list-mp-row-info">{option[key]}</h5>
+                </label>
+              </>
+            ))}
+          </>
         ))}
-              <div className="btn-container-checklist">
-              <Button
+        <div className="btn-container-checklist">
+          <Button
             id="representativeList-button"
-            className="continue-button"
+            className="back-button"
             size={"lg"}
             onClick={back}
           >
@@ -64,10 +91,9 @@ const ListSelect = ({
           >
             Continue
           </Button>
+        </div>
       </div>
-      </div>
-
-    </>
+    </div>
   );
 };
 
