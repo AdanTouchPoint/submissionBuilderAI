@@ -25,6 +25,9 @@ code {
   monospace;
 }
 
+h1, h2, h3, h4, h5, h6{
+  margin: 0px !important;
+}
 /*----------------------------- MainForm---------------------------------- */
 
 .main-texts-color{
@@ -37,28 +40,29 @@ code {
   font-family: Inter, 'Inter', sans-serif;
 }
 .input-color{
-background-color: var(--main-inputs-bg-color);
-border: 1px solid var(--main-option-text-and-border-color);
+background-color: var(--main-inputs-bg-color) !important;
+border: 1px solid var(--main-option-text-and-border-color)!important;
 }
 .input-color::placeholder{
-  color: var(--main-option-text-and-border-color);
+  color: var(--main-option-text-and-border-color)!important;
   text-transform: capitalize;
   font-size: 18px;
 }
 .main-form-inputs{
   min-height: 70px;
-  color: var(--main-option-text-and-border-color);
+  color: var(--main-option-text-and-border-color)!important;
+  font-size: 15px;
 }
 .form-control:focus{
-  color: var(--main-option-text-and-border-color);
-  background: var(--main-inputs-bg-color);
-  border-color: var(--main-option-text-and-border-color);
+  color: var(--main-option-text-and-border-color)!important;
+  background: var(--main-inputs-bg-color)!important;
+  border-color: var(--main-option-text-and-border-color)!important;
   box-shadow: none;
   font-size: 18px;
 }
 .links-checkboxes-color, .links-checkboxes-color:hover {
   
-  color: var(--links-checkbox-somebtns-color);
+  color: var(--links-checkbox-somebtns-color)!important;
   text-transform: capitalize;
 }
 .link-simulation{
@@ -175,14 +179,14 @@ line-height: normal;
 .select-label{
   margin-top: 30px;
   margin-bottom: 0px;
-  font-size: 19px;
+  font-size: 16px;
 }
 .form-group{
   max-width: 1050px;
 }
 .main-find-btn-container{
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .find-btn-main-form, .find-btn-main-form:hover, secundary-btn:hover{
   margin: 10px 0px;
@@ -287,7 +291,7 @@ display: flex;
 .buttons-for-mobile{
   display: none;
 }
-.back-button, .continue-button, .secundary-btn{
+.back-button, .continue-button, .secundary-btn, .secundary-btn:disabled{
   width: 100%;
   max-width: 310px;
   height: 85px;
@@ -295,7 +299,7 @@ display: flex;
   border: none;
   text-align: center;
   font-family: Inter;
-  font-size: 30px;
+  font-size: 25px !important;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -309,8 +313,8 @@ display: flex;
   box-shadow: none;
 }
 .continue-button, .secundary-btn:hover{
-  background: var(--primary-btn-bg-color);
-  color: var(--primary-btn-font-color);
+  background: var(--primary-btn-bg-color) !important;
+  color: var(--primary-btn-font-color)!important;
   
 }
 .continue-button:hover{
@@ -326,6 +330,7 @@ display: flex;
   row-gap: 25px;
 }
 .list-mp-row{
+  width: 100%;
   border-radius: 5px;
   border: 1px solid var(--main-option-text-and-border-color);
   background: var(--main-inputs-bg-color);
@@ -334,22 +339,31 @@ display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 24px 15px 32px;
+  padding: 15px 15px 15px 15px;
   text-transform: capitalize;
 }
 .label-ia-prompt{
   color: var(--main-texts-color);
 font-family: Inter;
-font-size: 22px;
+font-size: 16px;
 font-style: normal;
 font-weight: 600;
 line-height: normal;
 margin-top: 30px;
+text-align: left !important;
+}
+.ia-input-container{
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
 }
 .list-mp-row-info{
   display: flex;
  flex-direction: column;
- row-gap: 5px;   
+ row-gap: 5px;  
+ font-size: 15px;
+ width: 90%;
+ text-align: left; 
 }
 
 .ia-instructions-title{
@@ -368,17 +382,17 @@ margin-top: 30px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding-bottom: 50px;
+  
 }
 .subject-input{
   margin-bottom: 35px;
 }
 .email-ia-text-area,.email-ia-text-area:focus, #subject-emailform{
-  color: var(--main-option-text-and-border-color);
-  background: var(--main-inputs-bg-color);
-  border-color: var(--main-option-text-and-border-color);
+  color: var(--main-option-text-and-border-color)!important;
+  background: var(--main-inputs-bg-color)!important;
+  border-color: var(--main-option-text-and-border-color)!important;
   box-shadow: none;
-  font-size: 25px;
+  font-size: 17px;
   
 }
 .secundary-btn, .secundary-btn:disabled, .secundary-btn:active, .secundary-btn:focus-visible{
@@ -436,7 +450,7 @@ line-height: normal;
   color: var(--main-texts-color);
 text-align: center;
 font-family: Inter;
-font-size: 60px;
+font-size: 40px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
@@ -445,7 +459,7 @@ line-height: normal;
   color: var(--main-texts-color);
 text-align: center;
 font-family: Inter;
-font-size: 30px;
+font-size: 25px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
@@ -454,17 +468,18 @@ line-height: normal;
   color: var(--main-texts-color);
 text-align: center;
 font-family: Inter;
-font-size: 40px;
+font-size: 25px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
+padding-top: 80px;
 }
 .capitalize-style{
   text-transform: capitalize;
 }
 .instruction-text, .main-text-title{
 font-family: Inter;
-font-size: 60px;
+font-size: 40px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
@@ -472,7 +487,7 @@ line-height: normal;
 .main-text-instruction{
   font-size: 20px;
   font-family: Inter;
-  font-size: 30px;
+  font-size: 25px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -480,6 +495,14 @@ line-height: normal;
 }
 .change-mode-list-btn{
   font-size: 30px;
+}
+.btn{
+  border: none !important;
+}
+.list-element-label-confidentiality{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 @media (max-width: 767px) {
@@ -518,8 +541,9 @@ line-height: normal;
   }
   .list-container{
     padding: 25px 0px 30px 0px;
-    border-bottom: 1px solid var(--main-option-text-and-border-color);
+    /* border-bottom: 1px solid var(--main-option-text-and-border-color); */
     border-top: 1px solid var(--main-option-text-and-border-color);
+    margin-top: 50px;
   }
   .representative-name{
     font-size: 20px;
@@ -533,8 +557,11 @@ line-height: normal;
   .buttons-for-mobile{
     display: flex;
   }
+  .buttons-container-email-form{
+    padding: 0px 20px;
+  }
   .container-content{
-    padding: 40px 10px !important;
+    padding: 40px 30px !important;
   }
   .mobile-btns-cont{
     display: grid;
@@ -558,7 +585,7 @@ line-height: normal;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    padding: 0px;
+    padding: 0px 20px;
 
   }
   .change-to-manual-email-letters{
@@ -568,7 +595,10 @@ line-height: normal;
     margin-top: 20px;
     max-width: none;
   }
-  
+  .ia-input-container{
+    padding: 0px 20px;
+  }
+
   .main-form-flex-container{
     margin-bottom: 20px;
   }
@@ -580,7 +610,7 @@ line-height: normal;
     min-height: 250px;
   }
   .emailContainer{
-    padding: 25px;
+    padding: 40px 30px;
   }
   .buttonsContainer {
     text-align: center;
@@ -618,7 +648,7 @@ line-height: normal;
     line-height: 1.7em !important;
   }
   .typ-message{
-    font-size: 40px;
+    font-size: 30px;
   }
   .second-typ-message{
     width: 100%;
@@ -628,7 +658,7 @@ line-height: normal;
   }
   .share-text{
     margin-top: 100px;
-    font-size: 30px;
+    font-size: 25px;
   }
   .icon-size{
     width: 50px;

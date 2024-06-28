@@ -1,8 +1,15 @@
 .share-buttons {
     padding: 0.5rem 1rem;
-    margin-right: 1rem;
+    /* margin-right: 1rem; */
     border-radius: 5px;
     cursor: pointer;
+}
+.icons-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    column-gap: 15px;
+
 }
 .button:hover {
     background-color: #2d4373;

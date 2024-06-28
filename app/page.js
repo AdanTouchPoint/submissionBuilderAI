@@ -156,7 +156,7 @@ function Home() {
       );
       document.documentElement.style.setProperty(
         "--back-btns-font-color",
-        colors.buttonB_text_colot
+        colors.buttonB_text_color
       );
     }
   }, [colors]);

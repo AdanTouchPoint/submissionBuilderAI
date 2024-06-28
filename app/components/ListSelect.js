@@ -48,6 +48,7 @@ const ListSelect = ({
       hidden={hideList}
       className={"container container-content form-container"}
     >
+      <h3 className="main-text-title main-texts-color">Submission privacy</h3>
       <div className={"buttons-list-container list-container"}>
         {error ? (
           <Alert variant={"danger"}>Please Select One Option</Alert>
@@ -55,7 +56,7 @@ const ListSelect = ({
         {privacy?.map((option, index) => (
           <>
             {Object.keys(option).map((key) => (
-              <>
+              <div className="list-element-label-confidentiality">
                 <label className="select-label main-texts-color labels-text-format form-label">
                   {key}
                 </label>
@@ -70,7 +71,7 @@ const ListSelect = ({
                   />
                   <h5 className="list-mp-row-info">{option[key]}</h5>
                 </label>
-              </>
+              </div>
             ))}
           </>
         ))}

@@ -142,7 +142,19 @@ const MainForm = ({
                 );
               })}
             </div>
-            <Form.Group
+            <AIPrompt
+              tac={tac}
+              setHideIAPrompt={setHideIAPrompt}
+              hideIAPrompt={hideIAPrompt}
+              dataUser={dataUser}
+              setDataUser={setDataUser}
+              mainData={mainData}
+              allDataIn={allDataIn}
+              setShowMainContainer={setShowMainContainer}
+              setHideList={setHideList}
+              setTac={setTac}
+            />
+            {/* <Form.Group
               style={{ textAlign: "justify" }}
               className="field select-styles-form terms-and-cond-input"
               controlId="conditions"
@@ -164,23 +176,13 @@ const MainForm = ({
                   </a>
                 }
               />
-            </Form.Group>
+            </Form.Group> */}
             <Form.Group className="main-find-btn-container"></Form.Group>
+      
             {showLoadSpin ? loading("spinner-containerB") : null}
           </Form>
         </div>
       </div>
-      <AIPrompt
-        tac={tac}
-        setHideIAPrompt={setHideIAPrompt}
-        hideIAPrompt={hideIAPrompt}
-        dataUser={dataUser}
-        setDataUser={setDataUser}
-        mainData={mainData}
-        allDataIn={allDataIn}
-        setShowMainContainer={setShowMainContainer}
-        setHideList={setHideList}
-      />
       <ListSelect
         setValidated={setValidated}
         setError={setError}
