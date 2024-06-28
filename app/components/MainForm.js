@@ -154,29 +154,7 @@ const MainForm = ({
               setHideList={setHideList}
               setTac={setTac}
             />
-            {/* <Form.Group
-              style={{ textAlign: "justify" }}
-              className="field select-styles-form terms-and-cond-input"
-              controlId="conditions"
-            >
-              <Form.Check
-                name="conditions"
-                onClick={handleTerms}
-                className="links-checkboxes-color terms-and-cond-input"
-                // bsPrefix="custom-checkbox"
-                required
-                label={
-                  <a
-                    target={"_blank"}
-                    className="links-checkboxes-color"
-                    rel={"noreferrer"}
-                    href={mainData.termsAndConditionsURL}
-                  >
-                    Terms and Conditions
-                  </a>
-                }
-              />
-            </Form.Group> */}
+            
             <Form.Group className="main-find-btn-container"></Form.Group>
       
             {showLoadSpin ? loading("spinner-containerB") : null}

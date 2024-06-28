@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/cjs/Button";
 import Alert from "react-bootstrap/Alert";
+
 const ListSelect = ({
   setError,
   error,
@@ -23,6 +24,7 @@ const ListSelect = ({
       NameWithHeld: "The material will be published online without your name",
     },
   ];
+
   const handleChange = (e) => {
     e.preventDefault();
     setDataUser({
@@ -30,6 +32,7 @@ const ListSelect = ({
       [e.target.name]: e.target.value,
     });
   };
+
   const click = async () => {
     if (!dataUser.type) return setError(true);
     setHideEmailForm(false);
@@ -37,30 +40,29 @@ const ListSelect = ({
     setShowMainContainer(true);
     setError(false);
   };
+
   const back = () => {
     setHideEmailForm(true);
     setHideList(true);
     setShowMainContainer(false);
     setError(false);
   };
+
   return (
-    <div
-      hidden={hideList}
-      className={"container container-content form-container"}
-    >
+    <div hidden={hideList} className={"container container-content form-container"}>
       <h3 className="main-text-title main-texts-color">Submission privacy</h3>
       <div className={"buttons-list-container list-container"}>
         {error ? (
           <Alert variant={"danger"}>Please Select One Option</Alert>
         ) : null}
         {privacy?.map((option, index) => (
-          <>
+          <React.Fragment key={index}>
             {Object.keys(option).map((key) => (
-              <div className="list-element-label-confidentiality">
+              <div key={key} className="list-element-label-confidentiality">
                 <label className="select-label main-texts-color labels-text-format form-label">
                   {key}
                 </label>
-                <label key={index} className="list-mp-row">
+                <label key={`${key}-${index}`} className="list-mp-row">
                   <input
                     id="representativeList-checkbox"
                     type="checkbox"
@@ -73,7 +75,7 @@ const ListSelect = ({
                 </label>
               </div>
             ))}
-          </>
+          </React.Fragment>
         ))}
         <div className="btn-container-checklist">
           <Button
