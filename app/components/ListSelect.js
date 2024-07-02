@@ -65,7 +65,7 @@ const ListSelect = ({
                 <label key={`${key}-${index}`} className="list-mp-row">
                   <input
                     id="representativeList-checkbox"
-                    type="checkbox"
+                    type="radio"
                     onChange={handleChange}
                     className="form-check-input"
                     value={key}
