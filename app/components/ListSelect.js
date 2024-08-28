@@ -10,7 +10,9 @@ const ListSelect = ({
   setHideList,
   setDataUser,
   dataUser,
-  setHideEmailForm
+  setHideEmailForm,
+  setShowFindForm,
+  setHideIAPrompt
 }) => {
   const privacy = [
     {
@@ -44,7 +46,9 @@ const ListSelect = ({
   const back = () => {
     setHideEmailForm(true);
     setHideList(true);
+    setShowFindForm(false)
     setShowMainContainer(false);
+    setHideIAPrompt(false)
     setError(false);
   };
 
